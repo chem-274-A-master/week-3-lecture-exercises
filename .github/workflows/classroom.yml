@@ -1,0 +1,61 @@
+name: Autograding Tests
+'on':
+- push
+- repository_dispatch
+permissions:
+  checks: write
+  actions: read
+  contents: read
+jobs:
+  run-autograding-tests:
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-classroom[bot]'
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Exercise 01
+      id: exercise-01
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Exercise 01
+        command: cd exercise1 && bash run_test.sh
+        timeout: 20
+        max-score: 1
+
+    - name: Exercise 02
+      id: exercise-02
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Exercise 02
+        command: cd exercise2 && bash run_test.sh
+        timeout: 20
+        max-score: 1
+
+    - name: Exercise 03
+      id: exercise-03
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Exercise 03
+        command: cd exercise3 && bash run_test.sh
+        timeout: 20
+        max-score: 1
+
+    - name: Exercise 04
+      id: exercise-04
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: Exercise 04
+        command: cd exercise4 && bash run_test.sh
+        timeout: 20
+        max-score: 1
+
+    - name: Autograding Reporter
+      uses: classroom-resources/autograding-grading-reporter@v1
+      env:
+        EXERCISE-01_RESULTS: "${{steps.exercise-01.outputs.result}}"
+        EXERCISE-02_RESULTS: "${{steps.exercise-02.outputs.result}}"
+        EXERCISE-03_RESULTS: "${{steps.exercise-03.outputs.result}}"
+        EXERCISE-04_RESULTS: "${{steps.exercise-04.outputs.result}}"
+      with:
+        runners: test-01_01,test-01_02,test-01_03,test-01_04,test-02_01,test-02_02,test-03_01
