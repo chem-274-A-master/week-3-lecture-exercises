@@ -58,4 +58,4 @@ jobs:
         EXERCISE-03_RESULTS: "${{steps.exercise-03.outputs.result}}"
         EXERCISE-04_RESULTS: "${{steps.exercise-04.outputs.result}}"
       with:
-        runners: test-01_01,test-01_02,test-01_03,test-01_04,test-02_01,test-02_02,test-03_01
+        runners: exercise-01,exercise-02,exercise-03,exercise-04
