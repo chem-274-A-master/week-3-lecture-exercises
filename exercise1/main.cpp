@@ -13,7 +13,7 @@ Write a structure in C++ called Element. This structure should have the followin
 * name: Neon
 * z: 10
 * num_neutrons: 10
-* mass: 20.1797;
+* mass: 20.1797
 * radius: 58
 */
 
@@ -24,19 +24,13 @@ Write a structure in C++ called Element. This structure should have the followin
 /* Write structure here                */
 /***************************************/
 
-
-// Testing code
-int main() {
-  Element e;
+Element create_neon() {
+   Element e;
 
   /****************************************/
   /* Fill in the element information here */
   /****************************************/
 
-  std::cout << "Element: " << e.name
-            << " z= " << e.z
-            << " num_neutrons= " << e.num_neutrons
-            << " mass= " << e.mass
-            << " radius= " << e.radius
-            << std::endl;
+
+  return e;
 }

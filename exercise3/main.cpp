@@ -20,20 +20,3 @@ class Circle
 {
     /* Class stuff goes here */
 };
-
-
-int main() {
-
-  /*************************************/
-  /* TESTING CODE BELOW. DO NOT CHANGE */
-  /*************************************/
-  Circle c(8.31);
-
-  std::cout << "Area is " << c.area() << " and circumference is " << c.circumference() << std::endl;
-  std::cout << "Radius is " << c.radius() << std::endl;
-
-  const Circle c2(c);
-
-  std::cout << "Area is " << c2.area() << " and circumference is " << c2.circumference() << std::endl;
-  std::cout << "Radius is " << c2.radius() << std::endl;
-}

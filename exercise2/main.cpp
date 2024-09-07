@@ -22,13 +22,13 @@ class Rectangle
 };
 
 
-int main() {
+Rectangle create_rectangle() {
 
   /******************************************************************/
   /* Construct a Rectangle with a length of 4.1 and a width of 17.2 */
   /******************************************************************/
-  Rectangle r(/*stuff here*/)
+  Rectangle r(/*stuff here*/);
+
+  return r;
   
-  std::cout << "Area is " << r.area() << " and perimeter is " << r.perimeter() << std::endl;
-  std::cout << "Length is " << r.get_length() << " and the width is " << r.get_width() << std::endl;
 }

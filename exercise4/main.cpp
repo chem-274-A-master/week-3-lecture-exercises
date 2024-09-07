@@ -31,27 +31,10 @@ class Point3d
     }
 
     double * coords() { return coords_; }
+    double x() const { return coords_[0]; }
+    double y() const { return coords_[1]; }
+    double z() const { return coords_[2]; }
 
-    /* Write copy constructor and destructor here */
+    /* Write a copy constructor and destructor here */
+
 };
-
-int main() {
-
-  /*************************************/
-  /* TESTING CODE BELOW. DO NOT CHANGE */
-  /*************************************/
-  Point3d p(1.1, 2.2, 3.3);
-  std::cout << "Coordinates: "
-            << p.coords()[0] << " "
-            << p.coords()[1] << " "
-            << p.coords()[2] << std::endl;
-  
-  Point3d p2(p); // Call the copy constructor
-  std::cout << "Coordinates: "
-            << p2.coords()[0] << " "
-            << p2.coords()[1] << " "
-            << p2.coords()[2] << std::endl;
-  
-  std::cout << (p.coords() ==  p2.coords()) << std::endl;
-
-}
